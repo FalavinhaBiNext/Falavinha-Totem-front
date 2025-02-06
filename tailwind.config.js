@@ -13,6 +13,9 @@ export default {
         light_color: '#FFF',
         dark_color: '#060113',
         black_color: '#000',
+        gray_color: '#CCCCCC',
+        gray_color_dark: '#7D7D7D',
+        admin_background: '#00918ADE',
 
         // success_color: '#07bc0c',
         // warning_color: '#f1c40f',
@@ -48,7 +51,32 @@ export default {
         '0%': { transform: 'translateY(-50px)', opacity: 0 },
         '100%': { transform: 'translateY(0)', opacity: 1 },
       }
-    }
+    },
+    clipPath: {
+      polygon: 'polygon(100% 0, 100% 0%, 100% 100%, 0 99%, 0% 30%)',
+      circle: 'circle(50% at 50% 50%)',
+      ellipse: 'ellipse(50% 30% at 50% 50%)',
+      none: 'polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%)',
+    },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities, theme }) {
+      const newUtilities = {
+        '.clip-polygon': {
+          clipPath: theme('clipPath.polygon'),
+        },
+        '.clip-circle': {
+          clipPath: theme('clipPath.circle'),
+        },
+        '.clip-ellipse': {
+          clipPath: theme('clipPath.ellipse'),
+        },
+        '.clip-none': {
+          clipPath: 'none',
+        },
+      };
+
+      addUtilities(newUtilities, ['responsive', 'hover']);
+    },
+  ],
 }
