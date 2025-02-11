@@ -1,0 +1,32 @@
+import { useContext } from "react";
+import PropTypes from "prop-types";
+import { GlobalContext } from "../../../context/GlobalContextProvider";
+import { Link } from "react-router-dom";
+
+export default function Logo(props) {
+  const { whereTo, logoImg, imageSize } = props;
+
+  const { adminLogo } = useContext(GlobalContext);
+
+  return (
+    <Link
+      to={whereTo || "/"}
+      className="left-auto flex w-fit"
+      title="Página inicial"
+    >
+      <figure className={imageSize || "lg:w-[45px] w-[35px]"}>
+        <img
+          className="object-fit w-[inherit] h-[inherit]"
+          src={logoImg || adminLogo}
+          alt="Logo"
+        />
+      </figure>
+    </Link>
+  );
+}
+
+Logo.propTypes = {
+  whereTo: PropTypes.string,
+  logoImg: PropTypes.string,
+  imageSize: PropTypes.string,
+};

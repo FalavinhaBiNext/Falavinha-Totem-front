@@ -6,7 +6,7 @@ import MainButton from "../../components/UI/MainButton";
 import routes from "../../routes";
 import VideoPlayer from "../../components/UI/VideoPlayer";
 
-function HomePage() {
+export default function HomePage() {
   const navigate = useNavigate();
 
   return (
@@ -34,5 +34,3 @@ function HomePage() {
     </>
   );
 }
-
-export default HomePage;

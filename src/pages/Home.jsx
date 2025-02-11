@@ -6,7 +6,7 @@ import HeroApp from "../components/Hero";
 import FooterApp from "../components/Footer";
 import Botoes from "../components/Botoes";
 import fundo from "../assets/video/video.mp4";
-import routes from "../routes";
+// import routes from "../routes";
 import { GlobalContext } from "../context/GlobalContextProvider";
 
 function HomePage() {
@@ -15,7 +15,7 @@ function HomePage() {
   const { handleSetShowModal } = useContext(GlobalContext);
   const handleGetSevices = () => {
     handleSetShowModal(true);
-    navigate(routes.servicos);
+    navigate("/solucoes");
   };
   return (
     <>

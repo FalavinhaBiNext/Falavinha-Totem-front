@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { GlobalContext } from "../context/GlobalContextProvider";
 import { CloseIcon } from "../assets/icons";
 import Formulario from "./Formulario";
-import Botoes from "./Botoes";
+// import Botoes from "./Botoes";
 
 export default function PopupModal({ closeModal }) {
   const { hasEmptyInputs, emptyValueFields, handleSubmitUserData } =
@@ -30,14 +30,24 @@ export default function PopupModal({ closeModal }) {
         </span>
 
         <Formulario />
-        <Botoes
+
+        <button
+          onClick={handleSubmitAndCloseModal}
+          type="button"
+          className="botao"
+          disabled={hasEmptyInputs || emptyValueFields}
+        >
+          {" "}
+          Salvar
+        </button>
+        {/* <Botoes
           onClick={handleSubmitAndCloseModal}
           type="button"
           className="botao"
           disabled={hasEmptyInputs || emptyValueFields}
         >
           Salvar
-        </Botoes>
+        </Botoes> */}
       </div>
     </div>
   );

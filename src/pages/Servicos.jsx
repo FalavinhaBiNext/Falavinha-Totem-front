@@ -2,10 +2,9 @@ import HeaderApp from "../components/Header";
 import HeroApp from "../components/Hero";
 import FooterApp from "../components/Footer";
 import imagem from "../assets/image/Servicos2.png";
-import routes from "../routes";
-import FramerMotion from "../components/FramerMotion";
-import ButtonLinks from "../components/ButtonLinks";
-import textos from "../components/textos";
+import FramerMotion from "../components/UI/FramerMotion";
+import ButtonLinks from "../components/UI/ButtonLinks";
+// import textos from "../components/textos";
 import gifCoins from "../assets/gifs/coins1.gif";
 import gifMala from "../assets/gifs/mala.gif";
 import gifAvatar from "../assets/gifs/avatar.gif";
@@ -14,22 +13,35 @@ import PopupModal from "../components/PopupModal";
 import { GlobalContext } from "../context/GlobalContextProvider";
 import { useContext } from "react";
 
-function SecondPage() {
+export default function Servicos() {
   const { showModal, closeModal } = useContext(GlobalContext);
 
   // links dos botões
+  // const options = [
+  //   { name: "DASHBOARDS BI", route: routes.bi },
+  //   { name: "TRIBUTÁRIO", route: routes.tributario },
+  //   { name: "CONTABILIDADE", route: routes.contabilidade },
+  //   { name: "CONSULTORIA RH", route: routes.consultoriRh },
+  //   { name: "CIGAM", route: routes.cigam },
+  //   {
+  //     name: "CONSULTORIA EMPRESARIAL",
+  //     route: routes.consultoriaEmpresarial,
+  //   },
+  //   { name: "HOLDING", route: routes.holding },
+  //   { name: "TREINAMENTOS", route: routes.treinamentos },
+  // ];
   const options = [
-    { name: "DASHBOARDS BI", route: routes.bi },
-    { name: "TRIBUTÁRIO", route: routes.tributario },
-    { name: "CONTABILIDADE", route: routes.contabilidade },
-    { name: "CONSULTORIA RH", route: routes.consultoriRh },
-    { name: "CIGAM", route: routes.cigam },
+    { name: "DASHBOARDS BI", route: "/bi" },
+    { name: "TRIBUTÁRIO", route: "/tributario" },
+    { name: "CONTABILIDADE", route: "/contabilidade" },
+    { name: "CONSULTORIA RH", route: "/consultoriRh" },
+    { name: "CIGAM", route: "/cigam" },
     {
       name: "CONSULTORIA EMPRESARIAL",
-      route: routes.consultoriaEmpresarial,
+      route: "/consultoriaEmpresarial",
     },
-    { name: "HOLDING", route: routes.holding },
-    { name: "TREINAMENTOS", route: routes.treinamentos },
+    { name: "HOLDING", route: "/holding" },
+    { name: "TREINAMENTOS", route: "/treinamentos" },
   ];
 
   return (
@@ -44,7 +56,7 @@ function SecondPage() {
 
       <HeroApp fundo={imagem}>
         <FramerMotion>
-          <span className="textoMain">{textos.Servicos.Texto}</span>
+          {/* <span className="textoMain">{textos.Servicos.Texto}</span> */}
           <div style={{ display: "flex", gap: 2 }}>
             <div className="container-topicos_servicos">
               <div className="element-topicos_servicos">
@@ -136,5 +148,3 @@ function SecondPage() {
     </>
   );
 }
-
-export default SecondPage;

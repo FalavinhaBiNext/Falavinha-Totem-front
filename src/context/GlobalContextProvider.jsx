@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useCallback } from "react";
 import { useFormik } from "formik";
 import { phoneMask, moneyConverter, validationSchema } from "../utils";
 import { useGetSurvey } from "../hooks/useGetSurvey";
 import QuestionarioHoldingState from "../states/QuestionarioHoldingState";
+import adminLogo from "../assets/image/MinilogoWhite.png";
 import {
   handleSaveSurveyData,
   handleSaveLeadData,
@@ -16,6 +17,9 @@ export default function GlobalContextProvider({ children }) {
   const [resultadoTributario, setResultadoTributario] = useState([]);
   const [resultadoHolding, setResultadoHolding] = useState({});
   const [showModal, setShowModal] = useState(true);
+  const [toggleSidebar, setToggleSidebar] = useState(false);
+  const [toggleBurger, setToggleBurger] = useState(false);
+  const [toggleDropdown, setToggleDropdown] = useState(false);
   const sessionStorageData = sessionStorage.getItem("user_info");
   const savedData = sessionStorageData ? JSON.parse(sessionStorageData) : {};
 
@@ -167,6 +171,13 @@ export default function GlobalContextProvider({ children }) {
     setShowModal,
     hasSavedData,
     handleSetShowModal,
+    adminLogo,
+    toggleSidebar,
+    setToggleSidebar,
+    toggleBurger,
+    setToggleBurger,
+    toggleDropdown,
+    setToggleDropdown,
   };
   return (
     <GlobalContext.Provider value={values}>{children}</GlobalContext.Provider>
