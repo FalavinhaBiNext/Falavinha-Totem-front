@@ -4,6 +4,7 @@ import Loader from "../components/UI/Loader";
 import UseKeepOnTop from "../hooks/useKeepOnTop";
 import PublicRoutes from "./publicRoutes";
 import PrivateRoutes from "./privateRoutes";
+import routePaths from "./routePaths";
 
 export default function RoutesManager() {
   const {
@@ -58,7 +59,7 @@ export default function RoutesManager() {
     return isAuth ? (
       <Outlet />
     ) : (
-      <Navigate to="/login" replace state={{ from: location }} />
+      <Navigate to={routePaths.adminlogin} replace state={{ from: location }} />
     );
   };
 
@@ -69,56 +70,68 @@ export default function RoutesManager() {
         <Routes>
           {/* Public routes */}
           {[
-            { path: "/", element: <Home /> },
-            { path: "/solucoes", element: <Solucoes /> },
+            { path: routePaths.home, element: <Home /> },
+            { path: routePaths.solucoes, element: <Solucoes /> },
             {
-              path: "/business-intelligence",
+              path: routePaths.bisinessIntelligence,
               element: <BusinessIntelligence />,
             },
-            { path: "/tributario", element: <Tributario /> },
-            { path: "/contabilidade", element: <Contabilidade /> },
-            { path: "/consultoriaRH", element: <ConsultoriaRH /> },
-            { path: "/cigam", element: <Cigam /> },
+            { path: routePaths.tributario, element: <Tributario /> },
+            { path: routePaths.contabilidade, element: <Contabilidade /> },
+            { path: routePaths.consultoriRh, element: <ConsultoriaRH /> },
+            { path: routePaths.cigam, element: <Cigam /> },
             {
-              path: "/consultoria-empresarial",
+              path: routePaths.consultoriaEmpresarial,
               element: <ConsultoriaEmpresarial />,
             },
-            { path: "/holding", element: <Holding /> },
-            { path: "/treinamentos", element: <Treinamentos /> },
-            { path: "/cursos", element: <Cursos /> },
-            { path: "/modulos-cigam", element: <ModulosCigam /> },
+            { path: routePaths.holding, element: <Holding /> },
+            { path: routePaths.treinamentos, element: <Treinamentos /> },
+            { path: routePaths.cursos, element: <Cursos /> },
+            { path: routePaths.modulosCigam, element: <ModulosCigam /> },
             {
-              path: "/dashboard-contabilidade",
+              path: routePaths.dashboardGestor,
               element: <DashboardContabilidade />,
             },
-            { path: "/dashboard-financeiro", element: <DashboardFinanceiro /> },
-            { path: "/dashboard-rh", element: <DashboardRH /> },
             {
-              path: "/dashboard-gestao-estoque",
+              path: routePaths.dashboardFinanceiro,
+              element: <DashboardFinanceiro />,
+            },
+            { path: routePaths.dashboardRH, element: <DashboardRH /> },
+            {
+              path: routePaths.dashboardGestaoEstoque,
               element: <DashboardGestaoEstoque />,
             },
-            { path: "/dashboard-tributario", element: <DashboardTributario /> },
-            { path: "/questionario-rh", element: <QuestionarioRH /> },
+            {
+              path: routePaths.dashboardTributario,
+              element: <DashboardTributario />,
+            },
+            { path: routePaths.questionarioRH, element: <QuestionarioRH /> },
             { path: "/resultado-rh", element: <ResultadoRH /> },
-            { path: "/questionario-cigam", element: <QuestionarioCigam /> },
+            {
+              path: routePaths.questionarioCigam,
+              element: <QuestionarioCigam />,
+            },
             { path: "/resultado-cigam", element: <ResultadoCigam /> },
             {
-              path: "/questionario-tributario",
+              path: routePaths.questionarioTributario,
               element: <QuestionarioTributario />,
             },
             { path: "/resultado-tributario", element: <ResultadoTributario /> },
             {
-              path: "/questionario-empresarial",
+              path: routePaths.questionarioEmpresarial,
               element: <QuestionarioEmpresarial />,
             },
             {
               path: "/resultado-empresarial",
               element: <ResultadoEmpresarial />,
             },
-            { path: "/questionario-holding", element: <QuestionarioHolding /> },
+            {
+              path: routePaths.questionarioHolding,
+              element: <QuestionarioHolding />,
+            },
             { path: "/resultado-holding", element: <ResultadoHolding /> },
             { path: "*", element: <NotFound /> },
-            { path: "/login", element: <AdminLogin /> },
+            { path: routePaths.adminlogin, element: <AdminLogin /> },
           ].map(({ path, element }) => (
             <Route key={path} path={path} element={element} />
           ))}
@@ -135,14 +148,20 @@ export default function RoutesManager() {
                 </Suspense>
               }
             >
-              <Route path="gerenciamento" element={<AdminManager />} />
-              <Route path="consulta-cnpj" element={<ConsultaCNPJPage />} />
               <Route
-                path="questionario-consultoria"
+                path={routePaths.adminManager}
+                element={<AdminManager />}
+              />
+              <Route
+                path={routePaths.consultaCnpj}
+                element={<ConsultaCNPJPage />}
+              />
+              <Route
+                path={routePaths.questionarioConsultoria}
                 element={<QuestionarioConsultoriaPage />}
               />
               <Route
-                path="resultado-consultoria"
+                path={routePaths.resultadoConsultoria}
                 element={<ResultadoConsultoriaPage />}
               />
             </Route>

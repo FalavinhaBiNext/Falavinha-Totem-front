@@ -5,12 +5,16 @@ import { GlobalContext } from "../../../context/GlobalContextProvider";
 const getFirstName = (name) => name?.split(" ")[0] || "";
 
 const DropdownAvatar = ({ avatar }) => {
-  const { toggleDropdown, setToggleDropdown } = useContext(GlobalContext);
+  const { toggleDropdown, setToggleDropdown, userName } =
+    useContext(GlobalContext);
 
   const listingStyle =
     "transition-all duration-200 ease-in-out cursor-pointer text-light_color hover:bg-app_bg px-2 rounded-[5px] h-[30px] flex items-center";
   return (
-    <div className="w-[166px] relative flex flex-row-reverse items-center">
+    <div
+      className="w-[166px] relative flex flex-row-reverse items-center cursor-default"
+      title={userName}
+    >
       <figure
         className="relative z-20 flex items-center justify-center shadow-bx-3 min-w-10 w-10 h-10 overflow-hidden rounded-full border-[2.5px] border-light_color bg-light_color cursor-pointer"
         onClick={() => setToggleDropdown(!toggleDropdown)}
@@ -22,11 +26,11 @@ const DropdownAvatar = ({ avatar }) => {
         />
       </figure>
       <span
-        className="absolute border-[1px] border-special_border block w-full py-[6px] 
+        className="absolute border-[1px] border-special_border block w-full py-[6px] text-center 
       overflow-hidden bg-gradient-to-r from-[#00b0a7] to-[#00736e] shadow-bx-3 right-4 
       px-5 max-w-[150px] z-10 rounded-2xl text-sm text-light_color overflow-ellipsis whitespace-nowrap"
       >
-        {getFirstName("Alamogordo Soutto")}
+        {getFirstName(userName)}
       </span>
       <ul
         className={`w-[166px] h-[100px] absolute right-0 top-2 bg-primary_color shadow-bx-3 

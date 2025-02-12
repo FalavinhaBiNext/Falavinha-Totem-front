@@ -1,6 +1,6 @@
 const routePaths = {
   home: "/",
-  servicos: "/solucoes",
+  solucoes: "/solucoes",
   bisinessIntelligence: "/business-intelligence",
   tributario: "/tributario",
   contabilidade: "/contabilidade",

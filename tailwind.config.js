@@ -27,6 +27,7 @@ export default {
         'bx-1': '0px 10px 15px rgba(0, 0, 0, 0.3)',
         'bx-2': '2px 0px 25px 2px rgba(0,0,0,0.5)',
         'bx-3': '2px 3px 6px 0px rgba(0, 0, 0, 0.5)',
+        'bx-4': '0px 6px 10px 0px rgb(0 0 0 / 50%)',
       },
       padding: {
         'base_container': '0 calc((100% - 992px) / 2) 0 calc((100% - 992px) / 2)',

@@ -19,13 +19,13 @@ export default function HomePage() {
 
       <FooterApp>
         <MainButton
-          onClick={() => navigate(routes.servicos)}
+          onClick={() => navigate(routes.solucoes)}
           className={"md:max-w-[470px] max-w-none uppercase"}
         >
           Conheça nossos serviços
         </MainButton>
         <Link
-          to="/login"
+          to={routes.adminlogin}
           className="flex justify-center pt-2 mx-auto text-light_color"
         >
           Login

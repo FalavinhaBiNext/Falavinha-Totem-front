@@ -131,6 +131,8 @@ export default function GlobalContextProvider({ children }) {
       (typeof value === "object" && Object.keys(value).length === 0)
   );
 
+  const userName = "Giovane Pereira";
+
   const hasInputErrors =
     errors.nome ||
     errors.email ||
@@ -178,6 +180,7 @@ export default function GlobalContextProvider({ children }) {
     setToggleBurger,
     toggleDropdown,
     setToggleDropdown,
+    userName,
   };
   return (
     <GlobalContext.Provider value={values}>{children}</GlobalContext.Provider>

@@ -2,11 +2,22 @@ import React from "react";
 import PropTypes from "prop-types";
 
 export default function InputAdminOne(props) {
-  const { label, name, type, placeholder, value, onChange, onBlur } = props;
+  const {
+    label,
+    name,
+    type,
+    placeholder,
+    value,
+    onChange,
+    onBlur,
+    labelStyle,
+  } = props;
 
   return (
     <label className="w-full">
-      <span className="text-lg sm:text-xl text-light_color gilroyLight">
+      <span
+        className={`${labelStyle} block text-lg sm:text-xl text-light_color gilroyLight`}
+      >
         {label}
       </span>
       <input
@@ -33,4 +44,5 @@ InputAdminOne.propTypes = {
   value: PropTypes.string,
   onChange: PropTypes.func,
   onBlur: PropTypes.func,
+  labelStyle: PropTypes.string,
 };
