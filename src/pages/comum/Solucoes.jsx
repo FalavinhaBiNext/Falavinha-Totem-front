@@ -3,7 +3,7 @@ import MainHeader from "../../components/Header";
 import HeroApp from "../../components/Hero";
 import FooterApp from "../../components/Footer";
 import imagem from "../../assets/image/Servicos2.png";
-import routes from "../../routes";
+import routes from "../../routes/routePaths";
 import FramerMotion from "../../components/UI/FramerMotion";
 import ButtonLinks from "../../components/UI/ButtonLinks";
 import { solucoes } from "../../utils/conteudo_paginas";

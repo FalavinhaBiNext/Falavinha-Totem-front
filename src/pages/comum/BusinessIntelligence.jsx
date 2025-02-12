@@ -3,7 +3,7 @@ import HeroApp from "../../components/Hero";
 import FramerMotion from "../../components/UI/FramerMotion";
 import fundo from "../../assets/image/FundoBI.png";
 import FooterApp from "../../components/Footer";
-import routes from "../../routes";
+import routes from "../../routes/routePaths";
 import ButtonLinks from "../../components/UI/ButtonLinks";
 import PalavraChave from "../../components/UI/PalavraChave";
 import MainPageTitle from "../../components/UI/MainPageTitle";

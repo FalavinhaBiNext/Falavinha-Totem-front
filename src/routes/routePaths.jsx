@@ -1,4 +1,4 @@
-const routes = {
+const routePaths = {
   home: "/",
   servicos: "/solucoes",
   bisinessIntelligence: "/business-intelligence",
@@ -16,13 +16,17 @@ const routes = {
   dashboardRH: "/dashboard-rh",
   dashboardGestaoEstoque: "/dashboard-gestao-estoque",
   dashboardTributario: "/dashboard-tributario",
-
   questionarioRH: "/questionario-rh",
   questionarioCigam: "/questionario-cigam",
   questionarioTributario: "/questionario-tributario",
   questionarioEmpresarial: "/questionario-empresarial",
   questionarioHolding: "/questionario-holding",
   questionarioBI: "/questionario-bi",
+  adminlogin: "/login",
+  adminManager: "/admin/gerenciamento",
+  consultaCnpj: "/admin/consulta-cnpj",
+  questionarioConsultoria: "/admin/questionario-consultoria",
+  resultadoConsultoria: "/admin/resultado-consultoria",
 };
 
-export default routes;
+export default routePaths;

@@ -3,7 +3,7 @@ import MainHeader from "../../components/Header";
 import HeroApp from "../../components/Hero";
 import FooterApp from "../../components/Footer";
 import MainButton from "../../components/UI/MainButton";
-import routes from "../../routes";
+import routes from "../../routes/routePaths";
 import VideoPlayer from "../../components/UI/VideoPlayer";
 
 export default function HomePage() {

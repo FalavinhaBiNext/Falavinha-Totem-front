@@ -1,14 +1,15 @@
 import Logo from "./Logo";
 import MenuBurger from "./MenuBurger";
 import avatar from "../../../assets/image/avatar.png";
-import useScreenSize from "../../../hooks/useScreenSize";
+// import useScreenSize from "../../../hooks/useScreenSize";
 import DropdownAvatar from "./DropdownAvatar";
 import { ArrowDownIcon } from "../../../assets/icon";
+import { Link } from "react-router-dom";
 
 export default function AdminHeader() {
-  const {
-    screenSize: { width },
-  } = useScreenSize();
+  // const {
+  //   screenSize: { width },
+  // } = useScreenSize();
 
   const menuList = [
     {
@@ -72,7 +73,7 @@ export default function AdminHeader() {
                       cursor-pointer font-normal text-md min-h-[inherit] text-light_color 
                       hover:bg-app_bg px-2 rounded-[5px] h-[30px] w-full font-gilroyLight"
                     >
-                      {subItem.label}
+                      <Link to={subItem.link}>{subItem.label}</Link>
                     </li>
                   ))}
                 </ul>

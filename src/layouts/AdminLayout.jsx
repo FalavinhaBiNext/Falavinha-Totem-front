@@ -1,9 +1,12 @@
-import { useContext } from "react";
 import PropTypes from "prop-types";
-import useScreenSize from "../../../hooks/useScreenSize";
-import backgroundLarge from "../../../assets/image/administrativo-large.png";
-import backgroundSmall from "../../../assets/image/administrativo-small.png";
-import { GlobalContext } from "../../../context/GlobalContextProvider";
+import AdminHeader from "../components/UI/adminUI/AdminHeader";
+import SideMenu from "../components/UI/adminUI/SideMenu";
+import AdminFooter from "../components/UI/adminUI/AdminFooter";
+import { GlobalContext } from "../context/GlobalContextProvider";
+import { useContext } from "react";
+import useScreenSize from "../hooks/useScreenSize";
+import backgroundLarge from "../assets/image/administrativo-large.png";
+import backgroundSmall from "../assets/image/administrativo-small.png";
 
 export default function AdminLayout({ children }) {
   const { setToggleDropdown } = useContext(GlobalContext);
@@ -13,6 +16,7 @@ export default function AdminLayout({ children }) {
 
   return (
     <>
+      <AdminHeader />
       <main
         className="relative z-10 min-h-[80vh] font-gilroyThin min-[992px]:p-base_container px-10"
         onClick={() => setToggleDropdown(false)}
@@ -28,6 +32,8 @@ export default function AdminLayout({ children }) {
           }`,
         }}
       />
+      <SideMenu />
+      <AdminFooter />
     </>
   );
 }

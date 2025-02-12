@@ -2,7 +2,7 @@ import MainHeader from "../../components/Header";
 import HeroApp from "../../components/Hero";
 import fundo from "../../assets/image/FundoContabilidade.png";
 import FooterApp from "../../components/Footer";
-import routes from "../../routes";
+import routes from "../../routes/routePaths";
 import ButtonLinks from "../../components/UI/ButtonLinks";
 import FramerMotion from "../../components/UI/FramerMotion";
 import MainPageTitle from "../../components/UI/MainPageTitle";

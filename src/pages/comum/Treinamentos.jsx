@@ -3,7 +3,7 @@ import HeroApp from "../../components/Hero";
 import fundo from "../../assets/image/Treinamento.png";
 import FramerMotion from "../../components/UI/FramerMotion";
 import ButtonLinks from "../../components/UI/ButtonLinks";
-import routes from "../../routes";
+import routes from "../../routes/routePaths";
 import FooterApp from "../../components/Footer";
 // Import gifs
 import gifComunicacao from "../../assets/gifs/comunicacao.gif";
