@@ -1,9 +1,9 @@
 import { useState } from "react";
 import backgroundLarge from "../../assets/image/login-banner_lg.jpg";
 import backgroundSmall from "../../assets/image/login-banner_sm.png";
-import LoginForm from "../../components/UI/adminUI/LoginForm";
+import LoginForm from "../../components/adminUI/LoginForm";
 import { motion } from "framer-motion";
-import Logo from "../../components/UI/adminUI/Logo";
+import Logo from "../../components/adminUI/Logo";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -52,7 +52,7 @@ export default function Login() {
       <motion.main
         animate={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 100 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
         className="fixed bottom-[-5px] left-0 right-0 flex flex-col items-center
         md:h-[75%] h-[63%] w-full clip-polygon md:clip-polygon2 justify-end
         bg-admin_background z-20 pb-10 mx-auto"

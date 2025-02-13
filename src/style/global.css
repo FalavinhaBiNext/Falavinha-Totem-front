@@ -39,7 +39,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   margin: 0;
-  letter-spacing: 1.3px;
+  letter-spacing: 0.05em;
 }
 
 #root,
@@ -54,6 +54,10 @@ body,
 
 li {
   list-style: none;
+}
+
+.list-styleInside {
+  list-style: disc inside !important;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -235,6 +239,9 @@ input[type="number"]::-webkit-outer-spin-button {
   height: 100vh;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 100;
+  inset: 0;
 }
 
 /* HTML: <div class="loader"></div> */
@@ -393,4 +400,35 @@ input[type="radio"] + .radio-label:empty::before {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+}
+
+/* ANIMAÇÃO DO INTRO */
+.intro-animate {
+  transform: translateX(-400px);
+  transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  animation: fade-in-stagger 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  opacity: 0;
+}
+
+.intro-animate > li:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.intro-animate > li:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.intro-animate > li:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+.intro-animate > li:nth-child(4) {
+  animation-delay: 1s;
+}
+
+@keyframes fade-in-stagger {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

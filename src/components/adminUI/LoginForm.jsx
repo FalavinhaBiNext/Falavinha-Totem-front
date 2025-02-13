@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import InputAdminOne from "./InputAdminOne";
 import { motion } from "framer-motion";
-import routes from "../../../routes/routePaths";
+import routes from "../../routes/routePaths";
 
 export default function LoginForm({ inputsData }) {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ export default function LoginForm({ inputsData }) {
       className="flex flex-col w-full gap-3 px-5 sm:max-w-[572px] max-w-none mx-auto"
       animate={{ opacity: 1, y: 0 }}
       initial={{ opacity: 0, y: 100 }}
-      transition={{ duration: 0.8, delay: 0.6 }}
+      transition={{ duration: 0.8, delay: 0.8 }}
       // onSubmit={handleSubmitLogin}
     >
       {inputsData.map((input) => (

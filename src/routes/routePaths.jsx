@@ -23,10 +23,18 @@ const routePaths = {
   questionarioHolding: "/questionario-holding",
   questionarioBI: "/questionario-bi",
   adminlogin: "/login",
+
   adminManager: "/admin/gerenciamento",
   consultaCnpj: "/admin/consulta-cnpj",
   questionarioConsultoria: "/admin/questionario-consultoria",
   resultadoConsultoria: "/admin/resultado-consultoria",
+  cadastroPergunta: "/admin/cadastro-pergunta",
+  leadsCadastrados: "/admin/leads-cadastrados",
+  listaPerguntas: "/admin/lista-perguntas",
+  questionarioBusinessIntelligence: "/admin/questionario-business-intelligence",
+  reenvioEmailLead: "/admin/reenvio-email-lead",
+  reenvioEmailFalavinha: "/admin/reenvio-email-falavinha",
+  respostasLeads: "/admin/respostas-leads",
 };
 
 export default routePaths;

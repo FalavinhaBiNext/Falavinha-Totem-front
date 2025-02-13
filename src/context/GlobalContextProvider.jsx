@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { createContext, useState, useEffect, useCallback } from "react";
+import { createContext, useState, useEffect } from "react";
 import { useFormik } from "formik";
 import { phoneMask, moneyConverter, validationSchema } from "../utils";
 import { useGetSurvey } from "../hooks/useGetSurvey";
@@ -131,6 +131,11 @@ export default function GlobalContextProvider({ children }) {
       (typeof value === "object" && Object.keys(value).length === 0)
   );
 
+  // Verifica se o url da página atual
+  const hendleGetPageLocation = (location, urlName) => {
+    return location.pathname.split("/").filter(Boolean).slice(1)[0] !== urlName;
+  };
+
   const userName = "Giovane Pereira";
 
   const hasInputErrors =
@@ -181,6 +186,7 @@ export default function GlobalContextProvider({ children }) {
     toggleDropdown,
     setToggleDropdown,
     userName,
+    hendleGetPageLocation,
   };
   return (
     <GlobalContext.Provider value={values}>{children}</GlobalContext.Provider>

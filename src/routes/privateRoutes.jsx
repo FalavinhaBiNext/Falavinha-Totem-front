@@ -16,6 +16,27 @@ export default function privateRoutes() {
   const ResultadoConsultoriaPage = lazy(() =>
     import("../pages/administrativo/ResultadoConsultoria")
   );
+  const CadastroPeguntaPage = lazy(() =>
+    import("../pages/administrativo/CadastroPergunta")
+  );
+  const LeadsCadastradosPage = lazy(() =>
+    import("../pages/administrativo/LeadsCadastrados")
+  );
+  const ListaPerguntasPage = lazy(() =>
+    import("../pages/administrativo/ListaPerguntas")
+  );
+  const QuestionarioBusinessIntelligencePage = lazy(() =>
+    import("../pages/administrativo/QuestionarioBusinessIntelligence")
+  );
+  const ReenvioEmailLeadPage = lazy(() =>
+    import("../pages/administrativo/ReenvioEmailLead")
+  );
+  const ReenvioEmailFalavinhaPage = lazy(() =>
+    import("../pages/administrativo/ReenvioEmailFalavinha")
+  );
+  const RespostasLeadsPage = lazy(() =>
+    import("../pages/administrativo/RespostasLeads")
+  );
 
   return {
     AdminLogin,
@@ -24,5 +45,12 @@ export default function privateRoutes() {
     ConsultaCNPJPage,
     QuestionarioConsultoriaPage,
     ResultadoConsultoriaPage,
+    CadastroPeguntaPage,
+    LeadsCadastradosPage,
+    ListaPerguntasPage,
+    QuestionarioBusinessIntelligencePage,
+    ReenvioEmailLeadPage,
+    ReenvioEmailFalavinhaPage,
+    RespostasLeadsPage,
   };
 }

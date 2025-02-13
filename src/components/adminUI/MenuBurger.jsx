@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { GlobalContext } from "../../../context/GlobalContextProvider";
+import { GlobalContext } from "../../context/GlobalContextProvider";
 
 export default function MenuBurger() {
   const {
@@ -36,7 +36,7 @@ export default function MenuBurger() {
       />
       <span
         className={`${barsStyle} ${
-          isOpen && "transform -rotate-45 -translate-y-[10px]"
+          isOpen && "transform -rotate-45 -translate-y-[9px]"
         } transition-transform`}
       />
     </button>

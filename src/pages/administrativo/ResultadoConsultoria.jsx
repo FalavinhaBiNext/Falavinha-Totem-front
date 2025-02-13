@@ -1,9 +1,5 @@
-import React from "react";
+import AdminPageTitle from "../../components/adminUI/AdminPageTitle";
 
 export default function ResultadoConsultoria() {
-  return (
-    <div className="bg-fuchsia-700 min-h-[50vh] flex flex-col items-center justify-center">
-      <h1>ResultadoConsultoria</h1>
-    </div>
-  );
+  return <AdminPageTitle title="Resultados da consultoria empresarial" />;
 }

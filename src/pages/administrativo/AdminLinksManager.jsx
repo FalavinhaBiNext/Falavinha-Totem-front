@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
 import PropTypes from "prop-types";
-import AdminPageTitle from "../../components/UI/adminUI/AdminPageTitle";
+import AdminPageTitle from "../../components/adminUI/AdminPageTitle";
 import { Link } from "react-router-dom";
 import pages from "../../routes/routePaths";
 import { ArrowDownIcon } from "../../assets/icon";
 import settingsIcon from "../../assets/icon/settings.svg";
-import InputAdminOne from "../../components/UI/adminUI/InputAdminOne";
+import InputAdminOne from "../../components/adminUI/InputAdminOne";
 import HomeIcon from "../../assets/icon/home.svg";
 import checklistIcon from "../../assets/icon/checklist.svg";
 import lookingGlassIcon from "../../assets/icon/looking-glass.svg";
@@ -24,7 +24,7 @@ const menuLinks = [
   },
   {
     icon: checklistIcon,
-    link: null,
+    link: pages.questionarioBusinessIntelligence,
     label: `Questionário business intelligence`,
   },
   {
@@ -42,7 +42,7 @@ const menuLinks = [
 export default function AdminLinksManager() {
   const { userName } = useContext(GlobalContext);
   const [toggleInput, setToggleInput] = useState(false);
-  const listingStyle = `min-h-[130px] rounded-[10px] shadow-bx-3 border-[1px] 
+  const listingStyle = `sm:min-h-[130px] min-h-[120px] rounded-[10px] shadow-bx-3 border-[1px] 
   border-special_border bg-[#0f4856] relative`;
   const formStyle = `absolute bottom-0 flex flex-col justify-end gap-3 
   bg-app_bg mx-auto right-0 p-4 rounded-[10px] w-full left-0
@@ -52,9 +52,9 @@ export default function AdminLinksManager() {
   focus:outline-none focus:border-primary_color bg-gray_color_dark transition-all duration-200 ease-in-out`;
 
   return (
-    <div className="flex flex-col justify-start h-full sm:gap-40 gap-14 md:pt-32 pt-[140px] pb-10 mb-[100px]">
+    <>
       <AdminPageTitle title={`Bem vindo (a) ${userName}`} />
-      <ul className="grid gap-6 text-white grid-cols-adminGrid">
+      <ul className="grid grid-cols-1 gap-6 text-light_color sm:grid-cols-adminGrid">
         {menuLinks.map((item, index) => (
           <li
             key={index}
@@ -83,12 +83,12 @@ export default function AdminLinksManager() {
                 <form
                   className={`${formStyle} ${
                     toggleInput
-                      ? "sm:h-[280px] h-[350px] opacity-100 visible"
+                      ? "sm:h-[280px] h-[320px] opacity-100 visible"
                       : "h-0 opacity-0 invisible"
                   }`}
                   style={{ maxWidth: "calc(100% - 20px)" }}
                 >
-                  <div className="flex flex-col items-end w-full gap-2 md:flex-row">
+                  <div className="flex flex-col items-end w-full gap-3 md:flex-row">
                     <InputAdminOne
                       label="Nome da Empresa"
                       name="company"
@@ -122,7 +122,7 @@ export default function AdminLinksManager() {
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 }
 

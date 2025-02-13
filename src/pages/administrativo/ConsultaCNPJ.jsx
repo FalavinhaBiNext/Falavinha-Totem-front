@@ -1,9 +1,5 @@
-import React from "react";
+import AdminPageTitle from "../../components/adminUI/AdminPageTitle";
 
 export default function ConsultaCNPJ() {
-  return (
-    <div className="bg-red-500 min-h-[50vh] flex flex-col items-center justify-center">
-      <h1>ConsultaCNPJ</h1>
-    </div>
-  );
+  return <AdminPageTitle title="Consulta CNPJ" />;
 }

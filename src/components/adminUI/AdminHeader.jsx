@@ -1,43 +1,14 @@
 import Logo from "./Logo";
+import PropTypes from "prop-types";
+import { NavLink } from "react-router-dom";
 import MenuBurger from "./MenuBurger";
-import avatar from "../../../assets/image/avatar.png";
-// import useScreenSize from "../../../hooks/useScreenSize";
+import avatar from "../../assets/image/avatar.png";
 import DropdownAvatar from "./DropdownAvatar";
-import { ArrowDownIcon } from "../../../assets/icon";
-import { Link } from "react-router-dom";
+import { ArrowDownIcon } from "../../assets/icon";
 
-export default function AdminHeader() {
-  // const {
-  //   screenSize: { width },
-  // } = useScreenSize();
-
-  const menuList = [
-    {
-      menu: "Consultoria Empresarial",
-      submenu: [{ label: "Cadastrar pergunta" }, { label: "Listar perguntas" }],
-    },
-    {
-      menu: "Relatórios",
-      submenu: [
-        { label: "Leads cadastrados - SDR" },
-        { label: "Listar perguntas" },
-      ],
-    },
-    {
-      menu: "Consultar CNPJ",
-      submenu: [{ label: "Consultar CNPJ" }],
-    },
-    {
-      menu: "Email",
-      submenu: [
-        { label: "Reenviar para Falavinha" },
-        { label: "Reenviar para lead" },
-      ],
-    },
-  ];
-
+export default function AdminHeader({ menuList }) {
   const listingStyle = `toggle-menu flex gap-1 items-center min-h-[inherit] 
-  relative cursor-pointer text-md text-light_color font-gilroyLight font-semibold`;
+  relative cursor-pointer text-md font-gilroyLight font-semibold`;
 
   return (
     <header
@@ -56,13 +27,12 @@ export default function AdminHeader() {
       <nav className="hidden lg:flex min-h-[inherit]">
         <ul className="flex items-center justify-center h-auto gap-6 px-0 pt-0 min-h-[inherit]">
           {menuList.map((item, index) => (
-            <li key={index} className={listingStyle}>
+            <li key={index} className={`${listingStyle} text-light_color`}>
               {item.menu}
               {item.submenu && <ArrowDownIcon />}
-
               {item.submenu && (
                 <ul
-                  className="flex flex-col shadow-bx-3 transition-all duration-300 ease-in-out 
+                  className="flex flex-col shadow-bx-3 transition-all duration-300 ease-in-out
                   w-max absolute top-[61px] bg-primary_color rounded-[10px] border-[1px]
                   border-special_border p-[5px] gap-2"
                 >
@@ -70,10 +40,19 @@ export default function AdminHeader() {
                     <li
                       key={subIndex}
                       className="flex items-center transition-all duration-200 ease-in-out 
-                      cursor-pointer font-normal text-md min-h-[inherit] text-light_color 
-                      hover:bg-app_bg px-2 rounded-[5px] h-[30px] w-full font-gilroyLight"
+                      cursor-pointer font-normal text-md h-[30px] w-full min-h-[inherit] 
+                      rounded-[5px] hover:bg-app_bg_dark focus:bg-app_bg_dark"
                     >
-                      <Link to={subItem.link}>{subItem.label}</Link>
+                      <NavLink
+                        to={subItem.path}
+                        className={({ isActive }) =>
+                          `px-2 min-h-[inherit] rounded-[inherit] h-[inherit] flex items-center w-[inherit] ${
+                            isActive ? "bg-app_bg_dark" : ""
+                          }`
+                        }
+                      >
+                        {subItem.label}
+                      </NavLink>
                     </li>
                   ))}
                 </ul>
@@ -94,3 +73,12 @@ export default function AdminHeader() {
     </header>
   );
 }
+
+AdminHeader.propTypes = {
+  menuList: PropTypes.arrayOf(
+    PropTypes.shape({
+      menu: PropTypes.string.isRequired,
+      submenu: PropTypes.arrayOf(PropTypes.shape({ label: PropTypes.string })),
+    })
+  ).isRequired,
+};
