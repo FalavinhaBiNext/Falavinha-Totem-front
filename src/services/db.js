@@ -1,4 +1,7 @@
-
+const options = [
+  { value: 1, label: "Sim" },
+  { value: 0, label: "Não" },
+];
 
 // Perguntas para o survey do RH
 export const perguntasSurveyRh = [
@@ -268,7 +271,7 @@ export const perguntasSurveyEmpresarial = [
     ],
   },
   {
-    id: 6, // Corrected duplicate id
+    id: 6,
     titulo: "Tecnologia",
     perguntas: [
       {
@@ -552,3 +555,203 @@ export const modulosCigam = [
   },
 
 ]
+
+// Perguntas para o questionário de consultoria do admin
+export const surveyConsultoria = [
+  {
+    name: "Estratégia",
+    enquiries: [
+      {
+        label: "Sua empresa tem missão, visão e valores formalizados?",
+        options,
+        id: 1,
+      },
+      {
+        label:
+          "Os objetivos estratégicos são definidos e revisados regularmente?",
+        options,
+        id: 2,
+      },
+      {
+        label: "A empresa possui um planejamento estratégico documentado?",
+        options,
+        id: 3,
+      },
+      {
+        label: "Os indicadores de desempenho são monitorados com frequência?",
+        options,
+        id: 4,
+      },
+      {
+        label:
+          "Há análises regulares sobre o mercado e a concorrência para ajustar estratégias?",
+        options,
+        id: 5,
+      },
+    ],
+    id: "estrategia",
+  },
+  {
+    name: "Finanças",
+    enquiries: [
+      {
+        label:
+          "As finanças da sua empresa estão sendo gerenciadas de forma eficiente?",
+        options,
+        id: 6,
+      },
+      {
+        label: "Há uma estratégia de gestão de riscos para o setor financeiro?",
+        options,
+        id: 7,
+      },
+      {
+        label: "Você acompanha de perta as finanças da sua empresa?",
+        options,
+        id: 8,
+      },
+      {
+        label:
+          "O setor financeiro da sua empresa utliza de tecnologias modernas para gerencias as sua finanças?",
+        options,
+        id: 9,
+      },
+      {
+        label:
+          "Você planeja investir em projetos de tecnologia para o setor financeiro?",
+        options,
+        id: 10,
+      },
+    ],
+    id: "financas",
+  },
+  {
+    name: "Recursos Humanos",
+    enquiries: [
+      {
+        label:
+          "O setor humanos da sua empresa está sendo gerenciado de forma eficiente?",
+        options,
+        id: 11,
+      },
+      {
+        label: "Há uma estratégia de gestão de riscos para o setor humanos?",
+        options,
+        id: 12,
+      },
+      {
+        label: "Você acompanha de perto as pessoas da sua empresa?",
+        options,
+        id: 13,
+      },
+      {
+        label: "A empresa possui um plano de treinamento para os funcionários?",
+        options,
+        id: 14,
+      },
+      {
+        label:
+          "As pessoas da sua empresa estão envolvidas em atividades de voluntário?",
+        options,
+        id: 15,
+      },
+    ],
+    id: "recursos-humanos",
+  },
+  {
+    name: "Operações",
+    enquiries: [
+      {
+        label:
+          "O setor operacional da sua empresa está sendo gerenciado de forma eficiente?",
+        options,
+        id: 16,
+      },
+      {
+        label:
+          "Há uma estratégia de gestão de riscos para o setor operacional?",
+        options,
+        id: 17,
+      },
+      {
+        label: "Você acompanha de perto as operações da sua empresa?",
+        options,
+        id: 18,
+      },
+      {
+        label:
+          "Os funcionários da sua empresa estão envolvidos em atividades de voluntário?",
+        options,
+        id: 19,
+      },
+    ],
+    id: "operacoes",
+  },
+  {
+    name: "Marketing",
+    enquiries: [
+      {
+        label:
+          "O setor marketing da sua empresa está sendo gerenciado de forma eficiente?",
+        options,
+        id: 20,
+      },
+      {
+        label: "Há uma estratégia de gestão de riscos para o setor marketing?",
+        options,
+        id: 21,
+      },
+      {
+        label: "Você acompanha de perto as campanhas da sua empresa?",
+        options,
+        id: 22,
+      },
+      {
+        label: "A empresa possui um plano de marketing digital?",
+        options,
+        id: 23,
+      },
+      {
+        label: "Você planeja investir em projetos de marketing digital?",
+        options,
+        id: 24,
+      },
+    ],
+    id: "marketing",
+  },
+  {
+    name: "Tecnologia",
+    enquiries: [
+      {
+        label:
+          "O setor tecnológico da sua empresa está sendo gerenciado de forma eficiente?",
+        options,
+        id: 25,
+      },
+      {
+        label:
+          "Há uma estratégia de gestão de riscos para o setor tecnológico?",
+        options,
+        id: 26,
+      },
+      {
+        label: "Você acompanha de perto as tecnologias da sua empresa?",
+        options,
+        id: 27,
+      },
+      {
+        label:
+          "As tecnologias da sua empresa estão sendo utilizadas de forma eficiente?",
+        options,
+        id: 28,
+      },
+      {
+        label:
+          "Os funcionários da sua empresa estão envolvidos em atividades de voluntário?",
+        options,
+        id: 29,
+      },
+    ],
+    id: "tecnologia",
+  },
+];

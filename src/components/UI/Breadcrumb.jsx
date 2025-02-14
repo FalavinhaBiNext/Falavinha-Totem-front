@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import route from "../../routes/routePaths";
-import { ArrowDownIcon } from "../../assets/icon";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 
 const Breadcrumb = ({ children, styleProps, onClick }) => {

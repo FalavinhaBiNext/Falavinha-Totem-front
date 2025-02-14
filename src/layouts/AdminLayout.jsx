@@ -56,18 +56,21 @@ export default function AdminLayout({ children }) {
         onClick={() => setToggleDropdown(false)}
       >
         <h1 className="h-0 opacity-0">Página do administrador</h1>
+        {/* breadcrumb será exibido aqui */}
         {hendleGetPageLocation(location, "gerenciamento") && (
           <Breadcrumb
-            styleProps="absolute top-[80px] lg:top-[60px] lg:h-[50px] h-[40px] w-full 
-          left-0 right-0 min-[992px]:p-base_container px-2 z-50 border-b border-primary_color"
+            styleProps="absolute top-[80px] lg:top-[60px] h-[55px] w-full 
+          left-0 right-0 min-[992px]:p-base_container px-5 z-50 border-b border-primary_color"
           >
             Inicial
           </Breadcrumb>
         )}
-        <div className="relative flex flex-col justify-start h-full sm:gap-32 gap-12 lg:pt-36 pt-[160px] pb-10 mb-[100px]">
+        {/* conteúdo da página será exibido aqui */}
+        <div className="relative flex flex-col justify-start h-full pt-[140px] pb-10 mb-[100px]">
           {children}
         </div>
       </main>
+
       <span
         className="fixed top-0 left-0 w-full h-full bg-center bg-no-repeat bg-cover"
         style={{
