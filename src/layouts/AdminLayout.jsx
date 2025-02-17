@@ -52,7 +52,7 @@ export default function AdminLayout({ children }) {
     <>
       <AdminHeader menuList={menuList} />
       <main
-        className="relative z-10 min-h-[80vh] font-gilroyThin min-[992px]:p-base_container px-10"
+        className="relative z-10 min-h-[80vh] font-gilroyThin lg:p-base_container px-10"
         onClick={() => setToggleDropdown(false)}
       >
         <h1 className="h-0 opacity-0">Página do administrador</h1>
@@ -60,7 +60,7 @@ export default function AdminLayout({ children }) {
         {hendleGetPageLocation(location, "gerenciamento") && (
           <Breadcrumb
             styleProps="absolute top-[80px] lg:top-[60px] h-[55px] w-full 
-          left-0 right-0 min-[992px]:p-base_container px-5 z-50 border-b border-primary_color"
+          left-0 right-0 lg:p-base_container px-5 z-50 border-b border-primary_color"
           >
             Inicial
           </Breadcrumb>

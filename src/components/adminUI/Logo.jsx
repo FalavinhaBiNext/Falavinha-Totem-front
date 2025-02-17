@@ -8,12 +8,17 @@ export default function Logo(props) {
 
   const { adminLogo, setToggleSidebar } = useContext(GlobalContext);
 
+  const handleLogout = () => {
+    localStorage.removeItem("surveyAnswers");
+    setToggleSidebar(false);
+  };
+
   return (
     <Link
       to={whereTo || "/"}
       className="left-auto flex h-auto w-max"
       title="Página inicial"
-      onClick={() => setToggleSidebar(false)}
+      onClick={handleLogout}
     >
       <figure className={imageSize || "lg:w-[45px] w-[35px]"}>
         <img

@@ -32,7 +32,7 @@ export default {
         'bx-4': '0px 6px 10px 0px rgb(0 0 0 / 50%)',
       },
       padding: {
-        'base_container': '0 calc((100% - 992px) / 2) 0 calc((100% - 992px) / 2)',
+        'base_container': '0 calc((100% - 1024px) / 2) 0 calc((100% - 1024px) / 2)',
         // 'custom_container': '0 calc((100% - 1070px) / 2) 0 calc((100% - 1070px) / 2)',
         // 'ultrawide_container': '0 calc((100% - 1670px) / 2) 0 calc((100% - 1670px) / 2)',
       },
@@ -51,7 +51,8 @@ export default {
       },
     },
     animation: {
-      intro: 'intro 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) both',
+      intro: 'intro 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) forwards',
+      spin: 'spin 0.8s linear infinite',
     },
     keyframes: {
       intro: {
@@ -64,6 +65,14 @@ export default {
       polygon2: 'polygon(100% 15%, 100% 0%, 100% 100%, 0 100%, 0% 60%)',
       none: 'polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%)',
     },
+    screens: {
+      'xs': '480px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    }
   },
   plugins: [
     function ({ addUtilities, theme }) {
