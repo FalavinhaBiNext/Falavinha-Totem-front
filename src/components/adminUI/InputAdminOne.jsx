@@ -1,4 +1,3 @@
-import React from "react";
 import PropTypes from "prop-types";
 
 export default function InputAdminOne(props) {
@@ -16,7 +15,7 @@ export default function InputAdminOne(props) {
   return (
     <label className="w-full">
       <span
-        className={`${labelStyle} block text-lg sm:text-xl text-light_color gilroyLight`}
+        className={`${labelStyle} block text-base sm:text-xl leading-5 text-light_color gilroyLight mb-1`}
       >
         {label}
       </span>

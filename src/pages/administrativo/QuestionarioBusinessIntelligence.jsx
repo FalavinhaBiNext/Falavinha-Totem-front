@@ -1,5 +1,67 @@
 import AdminPageTitle from "../../components/adminUI/AdminPageTitle";
+import InputAdminOne from "../../components/adminUI/InputAdminOne";
+import AdminButton from "../../components/adminUI/AdminButton";
 
 export default function QuestionarioBusinessIntelligence() {
-  return <AdminPageTitle title="Questionário business intelligence" />;
+  const inputsData = [
+    {
+      name: "question-1",
+      label: "Sua empresa tem missão, visão e valores formalizados?",
+      type: "text",
+      value: "",
+      onChange: (e) => console.log(e.target.value),
+      onBlur: (e) => console.log(e.target.value),
+    },
+    {
+      name: "question-2",
+      label:
+        "Os objetivos estratégicos são definidos e revisados regularmente?",
+      type: "text",
+      value: "",
+      onChange: (e) => console.log(e.target.value),
+      onBlur: (e) => console.log(e.target.value),
+    },
+    {
+      name: "question-3",
+      label: "A empresa possui um planejamento estratégico documentado?",
+      type: "text",
+      value: "",
+      onChange: (e) => console.log(e.target.value),
+      onBlur: (e) => console.log(e.target.value),
+    },
+    {
+      name: "question-4",
+      label: "Os indicadores de desempenho são monitorados com frequeência?",
+      type: "text",
+      value: "",
+      onChange: (e) => console.log(e.target.value),
+      onBlur: (e) => console.log(e.target.value),
+    },
+    {
+      name: "question-5",
+      label:
+        "Há analises regulares sobre o mercado e a concorrência para ajustar estratégias?",
+      type: "text",
+      value: "",
+      onChange: (e) => console.log(e.target.value),
+      onBlur: (e) => console.log(e.target.value),
+    },
+  ];
+
+  return (
+    <>
+      <AdminPageTitle title="Business intelligence" />
+
+      <form className="flex flex-col gap-5 justify-center max-w-[768px] mx-auto w-full">
+        {inputsData.map((input) => (
+          <InputAdminOne key={input.name} {...input} />
+        ))}
+        <AdminButton
+          title="Próximo"
+          type="button"
+          customStyle={{ margin: "auto", marginTop: "20px" }}
+        />
+      </form>
+    </>
+  );
 }

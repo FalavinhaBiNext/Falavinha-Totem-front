@@ -1,15 +1,16 @@
 import PropTypes from "prop-types";
+import { useContext } from "react";
+import { useLocation } from "react-router-dom";
 import AdminHeader from "../components/adminUI/AdminHeader";
 import SideMenu from "../components/adminUI/SideMenu";
 import AdminFooter from "../components/adminUI/AdminFooter";
 import { GlobalContext } from "../context/GlobalContextProvider";
-import { useContext } from "react";
 import useScreenSize from "../hooks/useScreenSize";
 import backgroundLarge from "../assets/image/administrativo-large.png";
 import backgroundSmall from "../assets/image/administrativo-small.png";
 import pages from "../routes/routePaths";
 import Breadcrumb from "../components/UI/Breadcrumb";
-import { useLocation } from "react-router-dom";
+import SimpleForm from "../components/adminUI/SimpleForm";
 
 export default function AdminLayout({ children }) {
   const { setToggleDropdown, hendleGetPageLocation } =
@@ -52,7 +53,7 @@ export default function AdminLayout({ children }) {
     <>
       <AdminHeader menuList={menuList} />
       <main
-        className="relative z-10 min-h-[80vh] font-gilroyThin lg:p-base_container px-10"
+        className="relative z-10 min-h-[80vh] font-gilroyThin lg:pt-[115px] pt-[135px]"
         onClick={() => setToggleDropdown(false)}
       >
         <h1 className="h-0 opacity-0">Página do administrador</h1>
@@ -66,7 +67,7 @@ export default function AdminLayout({ children }) {
           </Breadcrumb>
         )}
         {/* conteúdo da página será exibido aqui */}
-        <div className="relative flex flex-col justify-start h-full pt-[140px] pb-10 mb-[100px]">
+        <div className="relative flex flex-col justify-start h-full pb-10 mb-[100px] lg:p-base_container px-10">
           {children}
         </div>
       </main>

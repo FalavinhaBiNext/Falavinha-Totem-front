@@ -1,4 +1,3 @@
-import React from "react";
 import InputAdminOne from "./InputAdminOne";
 
 export default function SimpleForm() {
@@ -46,7 +45,11 @@ export default function SimpleForm() {
   ];
 
   return (
-    <form className="grid w-full pt-2 pb-10 gap-x-6 gap-y-2 grid-cols-adminGrid bg-primary_color">
+    <form
+      className="z-10 grid w-full pt-2 pb-10 gap-x-6 gap-y-2 grid-cols-standard3 max-w-[670px] bg-primary_color
+    lg:shadow-none shadow-bx-1
+    "
+    >
       {inputsData.map((input) => (
         <InputAdminOne key={input.name} {...input} labelStyle="mb-0" />
       ))}
