@@ -35,6 +35,7 @@ const routePaths = {
   reenvioEmailLead: "/admin/reenvio-email-lead",
   reenvioEmailFalavinha: "/admin/reenvio-email-falavinha",
   respostasLeads: "/admin/respostas-leads",
+  propostaLead: "/admin/proposta-lead",
 };
 
 export default routePaths;

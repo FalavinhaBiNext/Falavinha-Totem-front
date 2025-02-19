@@ -15,7 +15,7 @@ export default {
         light_color: '#FFF',
         dark_color: '#060113',
         black_color: '#000',
-        gray_color: '#CCCCCC',
+        gray_color: '#ededed',
         gray_color_dark: '#7D7D7D',
         app_bg: "#00918A",
         app_bg_dark: "#0F495CFE",

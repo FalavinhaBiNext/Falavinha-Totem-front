@@ -34,6 +34,7 @@ export default function AdminLayout({ children }) {
       submenu: [
         { label: "Leads cadastrados - SDR", path: pages.leadsCadastrados },
         { label: "Listar perguntas", path: pages.listaPerguntas },
+        { label: "Respostas por lead", path: pages.respostasLeads },
       ],
     },
     {
@@ -43,8 +44,8 @@ export default function AdminLayout({ children }) {
     {
       menu: "Email",
       submenu: [
-        { label: "Reenviar para Falavinha", path: pages.reenvioEmailFalavinha },
         { label: "Reenviar para lead", path: pages.reenvioEmailLead },
+        { label: "Proposta para lead", path: pages.propostaLead },
       ],
     },
   ];

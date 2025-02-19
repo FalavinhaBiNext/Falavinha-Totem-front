@@ -31,11 +31,11 @@ export default function privateRoutes() {
   const ReenvioEmailLeadPage = lazy(() =>
     import("../pages/administrativo/ReenvioEmailLead")
   );
-  const ReenvioEmailFalavinhaPage = lazy(() =>
-    import("../pages/administrativo/ReenvioEmailFalavinha")
-  );
   const RespostasLeadsPage = lazy(() =>
     import("../pages/administrativo/RespostasLeads")
+  );
+  const PropostaLeadPage = lazy(() =>
+    import("../pages/administrativo/PropostaLead")
   );
 
   return {
@@ -50,7 +50,7 @@ export default function privateRoutes() {
     ListaPerguntasPage,
     QuestionarioBusinessIntelligencePage,
     ReenvioEmailLeadPage,
-    ReenvioEmailFalavinhaPage,
     RespostasLeadsPage,
+    PropostaLeadPage,
   };
 }

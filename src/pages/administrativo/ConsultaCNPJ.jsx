@@ -91,7 +91,7 @@ export default function ConsultaCNPJ() {
             label="Nome da Empresa"
             name="name"
           />
-          <div className="grid grid-cols-1 gap-4 xs:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <DataInput value={cnpjData.type} label="Tipo" name="type" />
             <DataInput value={cnpjData.email} label="Email" name="email" />
           </div>
@@ -116,7 +116,7 @@ export default function ConsultaCNPJ() {
             />
           </div>
 
-          <div className="flex flex-col gap-4 xs:flex-row">
+          <div className="flex flex-col gap-4 sm:flex-row">
             <DataInput
               value={cnpjData.neighborhood}
               label="Bairro"
@@ -133,7 +133,7 @@ export default function ConsultaCNPJ() {
               value={cnpjData.state}
               label="UF"
               name="state"
-              styleProps="xs:w-[240px] w-full"
+              styleProps="sm:w-[240px] w-full"
             />
           </div>
           <div className="grid grid-cols-1 gap-y-3 xs:gap-y-6 gap-x-4 xs:grid-cols-2">
@@ -174,7 +174,9 @@ const DataInput = ({
       {label}
     </span>
     <input
-      className="w-full h-[45px] px-[10px] py-[10px] border-[1px] border-[#003335] rounded-[10px] focus:outline-none focus:border-[#003335] bg-primary_color text-light_color font-semibold text-base tracking-wider"
+      className="w-full h-[45px] px-[10px] py-[10px] border-[1px] border-[#003335] 
+      rounded-[10px] focus:outline-none focus:border-[#003335] bg-primary_color 
+      text-light_color font-semibold text-base tracking-wider"
       type={type}
       name={name}
       value={value}

@@ -50,8 +50,8 @@ export default function RoutesManager() {
     ListaPerguntasPage,
     QuestionarioBusinessIntelligencePage,
     ReenvioEmailLeadPage,
-    ReenvioEmailFalavinhaPage,
     RespostasLeadsPage,
+    PropostaLeadPage,
   } = PrivateRoutes();
 
   const isAuthenticated = () => {
@@ -86,12 +86,9 @@ export default function RoutesManager() {
       path: routePaths.questionarioBusinessIntelligence,
       element: <QuestionarioBusinessIntelligencePage />,
     },
-    {
-      path: routePaths.reenvioEmailFalavinha,
-      element: <ReenvioEmailFalavinhaPage />,
-    },
     { path: routePaths.reenvioEmailLead, element: <ReenvioEmailLeadPage /> },
     { path: routePaths.respostasLeads, element: <RespostasLeadsPage /> },
+    { path: routePaths.propostaLead, element: <PropostaLeadPage /> },
   ];
 
   const publicRoutes = [
@@ -154,7 +151,9 @@ export default function RoutesManager() {
               path="admin"
               element={
                 <AdminLayout>
-                  <Outlet />
+                  <Suspense fallback={<Loader />}>
+                    <Outlet />
+                  </Suspense>
                 </AdminLayout>
               }
             >
