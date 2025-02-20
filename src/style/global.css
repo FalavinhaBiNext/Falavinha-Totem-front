@@ -48,8 +48,13 @@ body,
   background-color: #009499;
   font-family: "Gilroy-light";
   min-height: 100vh;
-  display: grid;
-  grid-template-rows: 1fr auto;
+  /* display: grid; */
+  /* grid-template-rows: 1fr auto; */
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
 }
 
 li {

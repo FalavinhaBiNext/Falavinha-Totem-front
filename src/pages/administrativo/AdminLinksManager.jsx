@@ -9,7 +9,7 @@ import InputAdminOne from "../../components/adminUI/InputAdminOne";
 import HomeIcon from "../../assets/icon/home.svg";
 import checklistIcon from "../../assets/icon/checklist.svg";
 import lookingGlassIcon from "../../assets/icon/looking-glass.svg";
-import { GlobalContext } from "../../context/GlobalContextProvider";
+import { GlobalContext } from "../../contexts/GlobalContextProvider";
 
 const menuLinks = [
   {

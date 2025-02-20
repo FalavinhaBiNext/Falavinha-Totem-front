@@ -1,7 +1,7 @@
 import { Fragment, useState, useEffect } from "react";
-import AdminPageTitle from "../../components/adminUI/AdminPageTitle";
 import AdminButton from "../../components/adminUI/AdminButton";
 import { surveyConsultoria } from "../../services/db";
+import AdminPageTitle from "../../components/adminUI/AdminPageTitle";
 
 export default function QuestionarioConsultoria() {
   const [page, setPage] = useState(0);
@@ -44,7 +44,7 @@ export default function QuestionarioConsultoria() {
     before:align-top before:text-center before:transition before:ease-in-out duration-300`;
   return (
     <>
-      <AdminPageTitle title="Consultoria Empresarial" />
+      <AdminPageTitle title="Consultoria empresarial" />
 
       <ul className="flex flex-wrap justify-center gap-y-2 sm:gap-y-0 gap-x-6 sm:justify-between sm:flex-nowrap">
         {surveyConsultoria.map(({ name, id }, index) => (
@@ -93,13 +93,15 @@ export default function QuestionarioConsultoria() {
         </ul>
       )}
 
-      <div className="flex flex-col-reverse items-center justify-center gap-4 mt-10 sm:flex-row">
-        <AdminButton
-          onClick={prevPage}
-          title={`${
-            page < surveyConsultoria.length - 1 ? "Anterior" : "Voltar"
-          }`}
-        />
+      <div className="flex flex-row items-center justify-center gap-4 mt-10">
+        {page > 0 && (
+          <AdminButton
+            onClick={prevPage}
+            title={`${
+              page < surveyConsultoria.length - 1 ? "Anterior" : "Voltar"
+            }`}
+          />
+        )}
         <AdminButton
           onClick={
             page === surveyConsultoria.length - 1 ? handleShowAnswers : nextPage

@@ -1,6 +1,6 @@
 import { useCallback, useContext, useEffect } from "react";
 import PropTypes from "prop-types";
-import { GlobalContext } from "../../context/GlobalContextProvider";
+import { GlobalContext } from "../../contexts/GlobalContextProvider";
 import useScreenSize from "../../hooks/useScreenSize";
 import { Link } from "react-router-dom";
 import falavinhaLogo from "../../assets/image/falavinha-logo.svg";

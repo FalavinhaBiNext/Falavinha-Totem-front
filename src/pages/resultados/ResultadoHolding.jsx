@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { moneyConverter } from "../../utils";
-import { GlobalContext } from "../../context/GlobalContextProvider";
+import { GlobalContext } from "../../contexts/GlobalContextProvider";
 import MainHeader from "../../components/Header";
 import HeroApp from "../../components/Hero";
 import FramerMotion from "../../components/UI/FramerMotion";

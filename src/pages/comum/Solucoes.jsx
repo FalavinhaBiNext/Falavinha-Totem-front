@@ -10,7 +10,7 @@ import { solucoes } from "../../utils/conteudo_paginas";
 import QRCodeIcons from "../../components/UI/QRCodeIcons";
 import MainPageTitle from "../../components/UI/MainPageTitle";
 import PalavraChave from "../../components/UI/PalavraChave";
-import { GlobalContext } from "../../context/GlobalContextProvider";
+import { GlobalContext } from "../../contexts/GlobalContextProvider";
 import PopupModal from "../../components/UI/PopupModal";
 
 export default function Servicos() {

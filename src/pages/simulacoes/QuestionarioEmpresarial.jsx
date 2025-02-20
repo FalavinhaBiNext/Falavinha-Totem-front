@@ -6,7 +6,7 @@ import fundo from "../../assets/image/ConsultoriaEmpresarial.png";
 import FramerMotion from "../../components/UI/FramerMotion";
 import FooterApp from "../../components/Footer";
 import MainButton from "../../components/UI/MainButton";
-import { GlobalContext } from "../../context/GlobalContextProvider";
+import { GlobalContext } from "../../contexts/GlobalContextProvider";
 import { perguntasSurveyEmpresarial } from "../../services/db";
 import { QuestionarioElementoBinario } from "../../components/QuestionarioElemento";
 import useRefreshDetector from "../../hooks/useRefreshDetector";

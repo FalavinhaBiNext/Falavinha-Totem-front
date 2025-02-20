@@ -7,7 +7,7 @@ import FooterApp from "../components/Footer";
 import Botoes from "../components/Botoes";
 import fundo from "../assets/video/video.mp4";
 // import routes from "../routes";
-import { GlobalContext } from "../context/GlobalContextProvider";
+import { GlobalContext } from "../contexts/GlobalContextProvider";
 
 function HomePage() {
   const navigate = useNavigate();

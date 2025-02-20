@@ -8,7 +8,7 @@ import FooterApp from "../../components/Footer";
 import QuestionarioHoldingState from "../../states/QuestionarioHoldingState";
 import { numberFormatter } from "../../utils";
 import MainButton from "../../components/UI/MainButton";
-import { GlobalContext } from "../../context/GlobalContextProvider";
+import { GlobalContext } from "../../contexts/GlobalContextProvider";
 import { useNavigate } from "react-router-dom";
 import useRefreshDetector from "../../hooks/useRefreshDetector";
 import MainPageTitle from "../../components/UI/MainPageTitle";

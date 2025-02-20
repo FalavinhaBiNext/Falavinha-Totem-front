@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { GlobalContext } from "../../context/GlobalContextProvider";
+import { GlobalContext } from "../../contexts/GlobalContextProvider";
 import MainHeader from "../../components/Header";
 import fundo from "../../assets/image/ConsultoriaEmpresarial.png";
 import HeroApp from "../../components/Hero";

@@ -18,7 +18,7 @@ export default function CustomSelect(props) {
     setIsOpen(false);
   };
 
-  const selectStyle = `flex items-center bg-gray_color w-full px-4 py-2 text-left border rounded-[10px] justify-between focus:outline-none focus:ring-2 focus:primary_color text-sm xs:text-base transition-all duration-300 ease-in-out h-[45px] font-semibold border-[1px] border-gray_color ${style} ${
+  const selectStyle = `flex items-center bg-gray_color w-full px-[10px] py-[10px] text-left border rounded-[10px] justify-between focus:outline-none focus:ring-2 focus:primary_color text-sm xs:text-base transition-all duration-300 ease-in-out h-[45px] font-semibold border-[1px] border-gray_color ${style} ${
     selectedOption?.label ? "text-dark_color" : "text-gray_color_dark"
   }`;
   return (
@@ -33,7 +33,7 @@ export default function CustomSelect(props) {
           title="chevron"
           className={`${
             isOpen && "rotate-180"
-          } w-5 h-5 ml-2 transition-[transform duration-400 ease-in-out`}
+          } w-5 h-5 ml-2 transition-[transform] duration-400 ease-in-out`}
         />
       </button>
       {isOpen && (

@@ -52,6 +52,7 @@ export default function RoutesManager() {
     ReenvioEmailLeadPage,
     RespostasLeadsPage,
     PropostaLeadPage,
+    PerfilPage,
   } = PrivateRoutes();
 
   const isAuthenticated = () => {
@@ -89,6 +90,7 @@ export default function RoutesManager() {
     { path: routePaths.reenvioEmailLead, element: <ReenvioEmailLeadPage /> },
     { path: routePaths.respostasLeads, element: <RespostasLeadsPage /> },
     { path: routePaths.propostaLead, element: <PropostaLeadPage /> },
+    { path: routePaths.perfil, element: <PerfilPage /> },
   ];
 
   const publicRoutes = [

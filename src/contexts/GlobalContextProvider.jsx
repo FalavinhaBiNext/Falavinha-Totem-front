@@ -9,6 +9,7 @@ import {
   handleSaveSurveyData,
   handleSaveLeadData,
 } from "../services/handleSaveSurveyData";
+import contextAdminLeadsData from "./contextAdminLeadsData";
 
 export const GlobalContext = createContext();
 export default function GlobalContextProvider({ children }) {
@@ -187,6 +188,9 @@ export default function GlobalContextProvider({ children }) {
     setToggleDropdown,
     userName,
     hendleGetPageLocation,
+    contextAdminLeadsData,
+    // adminLeadData,
+    // setAdminLeadData,
   };
   return (
     <GlobalContext.Provider value={values}>{children}</GlobalContext.Provider>

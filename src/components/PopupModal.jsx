@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import PropTypes from "prop-types";
-import { GlobalContext } from "../context/GlobalContextProvider";
+import { GlobalContext } from "../contexts/GlobalContextProvider";
 import { CloseIcon } from "../assets/icons";
 import Formulario from "./Formulario";
 // import Botoes from "./Botoes";

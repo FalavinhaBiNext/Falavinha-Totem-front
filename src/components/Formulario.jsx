@@ -1,12 +1,11 @@
 import PropTypes from "prop-types";
 import { useContext } from "react";
-import { GlobalContext } from "../context/GlobalContextProvider";
+import { GlobalContext } from "../contexts/GlobalContextProvider";
 import gifAvatar from "../assets/gifs/avatar.gif";
 import gifTel from "../assets/gifs/tel.gif";
 import gifEmail from "../assets/gifs/email.gif";
 import gifEmpresa from "../assets/gifs/empresa.gif";
 import gifTeam from "../assets/gifs/team.gif";
-
 
 export default function Formulario() {
   const { errors, touched, handleBlur, handleChange, inputValue, phoneMask } =

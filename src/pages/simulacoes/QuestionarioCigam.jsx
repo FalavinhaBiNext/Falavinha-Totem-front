@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { GlobalContext } from "../../context/GlobalContextProvider";
+import { GlobalContext } from "../../contexts/GlobalContextProvider";
 import MainHeader from "../../components/Header";
 import MainButton from "../../components/UI/MainButton";
 import HeroApp from "../../components/Hero";

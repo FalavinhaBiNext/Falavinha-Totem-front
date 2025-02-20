@@ -37,6 +37,7 @@ export default function privateRoutes() {
   const PropostaLeadPage = lazy(() =>
     import("../pages/administrativo/PropostaLead")
   );
+  const PerfilPage = lazy(() => import("../pages/administrativo/Perfil"));
 
   return {
     AdminLogin,
@@ -52,5 +53,6 @@ export default function privateRoutes() {
     ReenvioEmailLeadPage,
     RespostasLeadsPage,
     PropostaLeadPage,
+    PerfilPage,
   };
 }

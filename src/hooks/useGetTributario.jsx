@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { GlobalContext } from "../context/GlobalContextProvider";
+import { GlobalContext } from "../contexts/GlobalContextProvider";
 
 export default function useGetTributario() {
   const { resultadoTributario } = useContext(GlobalContext);

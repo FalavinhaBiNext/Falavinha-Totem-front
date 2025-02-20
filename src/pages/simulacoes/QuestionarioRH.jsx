@@ -4,7 +4,7 @@ import HeroApp from "../../components/Hero";
 import FooterApp from "../../components/Footer";
 import FramerMotion from "../../components/UI/FramerMotion";
 import imagem from "../../assets/image/ConsultoriaRH.png";
-import { GlobalContext } from "../../context/GlobalContextProvider";
+import { GlobalContext } from "../../contexts/GlobalContextProvider";
 import { useNavigate } from "react-router-dom";
 import { perguntasSurveyRh } from "../../services/db";
 import MainButton from "../../components/UI/MainButton";

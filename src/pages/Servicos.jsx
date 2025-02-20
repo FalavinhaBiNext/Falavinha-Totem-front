@@ -10,7 +10,7 @@ import gifMala from "../assets/gifs/mala.gif";
 import gifAvatar from "../assets/gifs/avatar.gif";
 import gifService from "../assets/gifs/servicos.gif";
 import PopupModal from "../components/PopupModal";
-import { GlobalContext } from "../context/GlobalContextProvider";
+import { GlobalContext } from "../contexts/GlobalContextProvider";
 import { useContext } from "react";
 
 export default function Servicos() {

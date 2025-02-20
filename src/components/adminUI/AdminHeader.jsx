@@ -5,24 +5,32 @@ import MenuBurger from "./MenuBurger";
 import avatar from "../../assets/image/avatar.png";
 import DropdownAvatar from "./DropdownAvatar";
 import { ArrowDownIcon } from "../../assets/icon";
-import SimpleForm from "./SimpleForm";
+import pages from "../../routes/routePaths";
+import useScrollEvent from "../../hooks/useScrollEvent";
 
-export default function AdminHeader({ menuList }) {
+export default function AdminHeader({ menuList, isElementVisible }) {
+  const { isScrolling } = useScrollEvent();
+
   const listingStyle = `toggle-menu flex gap-1 items-center min-h-[inherit]
   relative cursor-pointer text-md font-gilroyLight font-semibold`;
 
   return (
     <header
-      className="fixed w-full min-h-[60px]
-      lg:shadow-bx-1 shadow-none  bg-primary_color flex-col
-       h-fit flex items-center justify-between z-50
-      lg:p-base_container px-5"
+      className={`fixed w-full min-h-[60px] z-50 flex items-center justify-between 
+      bg-primary_color transition-all duration-200 ease-in-out lg:p-base_container px-5
+        ${
+          isElementVisible
+            ? isScrolling
+              ? "shadow-bx-1"
+              : "shadow-none"
+            : "lg:shadow-bx-1 shadow-none"
+        }`}
     >
       <div className="flex items-center justify-between w-full min-h-[inherit]">
         {/* LOGO */}
         <div className="flex items-center gap-3">
           <MenuBurger />
-          <Logo imageSize="w-[35px]" />
+          <Logo imageSize="w-[35px]" whereTo={pages.adminManager} />
         </div>
 
         {/* NAV */}
@@ -73,10 +81,17 @@ export default function AdminHeader({ menuList }) {
 
       {/* FAKE MOBILE HEADER */}
       <span
-        className="shadow-bx-1 bg-primary_color h-[135px] rotate-[-2deg] w-[200%] fixed
-        left-[-10px] right-[-10px] top-[-75px] lg:hidden block z-[-1] pointer-events-none"
+        className={`bg-primary_color h-[135px] rotate-[-2deg] w-[200%] fixed
+        left-[-10px] right-[-10px] top-[-75px] lg:hidden block z-[-1] pointer-events-none 
+         ${
+           isElementVisible
+             ? isScrolling
+               ? "shadow-bx-1"
+               : "shadow-none"
+             : "shadow-bx-1"
+         }
+        `}
       />
-      {/* <SimpleForm /> */}
     </header>
   );
 }
@@ -88,4 +103,5 @@ AdminHeader.propTypes = {
       submenu: PropTypes.arrayOf(PropTypes.shape({ label: PropTypes.string })),
     })
   ).isRequired,
+  isElementVisible: PropTypes.bool,
 };

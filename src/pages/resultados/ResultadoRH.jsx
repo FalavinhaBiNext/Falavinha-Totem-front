@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import MainHeader from "../../components/Header";
 import HeroApp from "../../components/Hero";
-import { GlobalContext } from "../../context/GlobalContextProvider";
+import { GlobalContext } from "../../contexts/GlobalContextProvider";
 import FramerMotion from "../../components/UI/FramerMotion";
 import imagem from "../../assets/image/ConsultoriaRH.png";
 import { PiUserSwitchThin } from "react-icons/pi";

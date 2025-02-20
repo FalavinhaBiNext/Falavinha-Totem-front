@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { useContext, useEffect } from "react";
-import { GlobalContext } from "../context/GlobalContextProvider";
+import { GlobalContext } from "../contexts/GlobalContextProvider";
 import { useNavigate } from "react-router-dom";
 import MainButton from "./UI/MainButton";
 import { perguntasSurveyRh } from "../services/db";

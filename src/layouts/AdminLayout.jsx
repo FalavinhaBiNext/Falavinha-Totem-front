@@ -4,22 +4,33 @@ import { useLocation } from "react-router-dom";
 import AdminHeader from "../components/adminUI/AdminHeader";
 import SideMenu from "../components/adminUI/SideMenu";
 import AdminFooter from "../components/adminUI/AdminFooter";
-import { GlobalContext } from "../context/GlobalContextProvider";
+import { GlobalContext } from "../contexts/GlobalContextProvider";
 import useScreenSize from "../hooks/useScreenSize";
 import backgroundLarge from "../assets/image/administrativo-large.png";
 import backgroundSmall from "../assets/image/administrativo-small.png";
 import pages from "../routes/routePaths";
-import Breadcrumb from "../components/UI/Breadcrumb";
 import SimpleForm from "../components/adminUI/SimpleForm";
 
 export default function AdminLayout({ children }) {
-  const { setToggleDropdown, hendleGetPageLocation } =
-    useContext(GlobalContext);
+  const { setToggleDropdown } = useContext(GlobalContext);
   const location = useLocation();
 
   const {
     screenSize: { width },
   } = useScreenSize();
+
+  const checkPageLocation = () => {
+    if (
+      location.pathname.split("/")[2] === "questionario-consultoria" ||
+      location.pathname.split("/")[2] === "questionario-business-intelligence"
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  const isElementVisible = checkPageLocation();
 
   const menuList = [
     {
@@ -52,21 +63,16 @@ export default function AdminLayout({ children }) {
 
   return (
     <>
-      <AdminHeader menuList={menuList} />
+      <AdminHeader menuList={menuList} isElementVisible={isElementVisible} />
       <main
-        className="relative z-10 min-h-[80vh] font-gilroyThin lg:pt-[115px] pt-[135px]"
+        className={`relative z-10 font-gilroyThin lg:pt-[60px] ${
+          isElementVisible ? "pt-[60px]" : "pt-[95px]"
+        }`}
         onClick={() => setToggleDropdown(false)}
       >
         <h1 className="h-0 opacity-0">Página do administrador</h1>
-        {/* breadcrumb será exibido aqui */}
-        {hendleGetPageLocation(location, "gerenciamento") && (
-          <Breadcrumb
-            styleProps="absolute top-[80px] lg:top-[60px] h-[55px] w-full 
-          left-0 right-0 lg:p-base_container px-5 z-50 border-b border-primary_color"
-          >
-            Inicial
-          </Breadcrumb>
-        )}
+        {isElementVisible && <SimpleForm />}
+
         {/* conteúdo da página será exibido aqui */}
         <div className="relative flex flex-col justify-start h-full pb-10 mb-[100px] lg:p-base_container px-10">
           {children}
